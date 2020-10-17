@@ -1,5 +1,7 @@
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace GerenciarPatrimonios
 {
@@ -7,7 +9,18 @@ namespace GerenciarPatrimonios
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = Host.CreateDefaultBuilder(args)
+                           .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                           .ConfigureWebHostDefaults(webHostBuilder =>
+                           {
+                               webHostBuilder
+                                .UseContentRoot(Directory.GetCurrentDirectory())
+                                .UseIISIntegration()
+                                .UseStartup<Startup>();
+                           })
+                           .Build();
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

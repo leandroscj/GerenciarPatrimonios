@@ -4,24 +4,24 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:51142",
-      "sslPort": 44397
+      "applicationUrl": "http://localhost:5000",
+      "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "PatrimonioEmpresarial",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GerenciarPatrimonios": {
+    "CrudPatrimonioEmpresarialJWT": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "PatrimonioEmpresarial",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "swagger/index.html",
+      "applicationUrl": "https://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

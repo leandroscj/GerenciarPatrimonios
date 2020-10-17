@@ -1,7 +1,4 @@
-﻿using GerenciarPatrimonios.Models.Marca;
-using GerenciarPatrimonios.Models.Patrimonio;
-using GerenciarPatrimonios.Models.Usuario;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GerenciarPatrimonios.Data
