@@ -15,7 +15,7 @@ namespace GerenciarPatrimonios.Models.Patrimonio
         [Column("Id")]
         [Display(Name = "Código")]
         [Required(ErrorMessage = "O numero da marca é obrigatório", AllowEmptyStrings = false)]
-        public int MarcaId { get; set; }
+        public string MarcaId { get; set; }
 
         [Column("Descricao")]
         [Display(Name = "Descrição do Patrimonio")]

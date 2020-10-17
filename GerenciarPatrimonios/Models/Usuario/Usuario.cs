@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GerenciarPatrimonios.Models.Usuario
 {
     [Table(nameof(Usuario))]
-    public class Patrimonio
+    public class Usuario
     {
         [Column("Nome")]
         [Display(Name = "Nome")]
@@ -14,7 +14,7 @@ namespace GerenciarPatrimonios.Models.Usuario
         [Column("Senha")]
         [Display(Name = "Senha")]
         [Required(ErrorMessage = "A senha é obrigatória", AllowEmptyStrings = false)]
-        public int Senha { get; set; }
+        public string Senha { get; set; }
 
         [Key]
         [Column("Email")]
