@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciarPatrimonios.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201017154448_InitialCreate")]
+    [Migration("20201020230141_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,9 +52,9 @@ namespace GerenciarPatrimonios.Migrations
                         .HasColumnName("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumeroTombo")
+                    b.Property<Guid>("NumeroTombo")
                         .HasColumnName("NumeroTombo")
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("MarcaId");
 

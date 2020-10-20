@@ -24,6 +24,11 @@ namespace GerenciarPatrimonios.Models.Patrimonio
 
         [Column("NumeroTombo")]
         [Display(Name = "Numero do tombo")]
-        public int NumeroTombo { get; private set; }
+        public Guid NumeroTombo { get; private set; }
+
+        public Patrimonio()
+        {
+            NumeroTombo = Guid.NewGuid();
+        }
     }
 }

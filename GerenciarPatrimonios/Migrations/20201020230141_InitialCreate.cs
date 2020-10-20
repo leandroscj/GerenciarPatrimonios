@@ -65,7 +65,7 @@ namespace GerenciarPatrimonios.Migrations
                     Id = table.Column<string>(nullable: false),
                     Nome = table.Column<string>(nullable: false),
                     Descricao = table.Column<string>(nullable: true),
-                    NumeroTombo = table.Column<int>(nullable: false)
+                    NumeroTombo = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
