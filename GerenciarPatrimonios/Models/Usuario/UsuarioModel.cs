@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciarPatrimonios.Models.Usuario
 {
-    [Table(nameof(Usuario))]
-    public class Usuario
+    [Table(nameof(UsuarioModel))]
+    public class UsuarioModel
     {
         [Column("Nome")]
         [Display(Name = "Nome")]

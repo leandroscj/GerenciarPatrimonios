@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciarPatrimonios.Models.Patrimonio
 {
-    [Table(nameof(Patrimonio))]
-    public class Patrimonio
+    [Table(nameof(PatrimonioModel))]
+    public class PatrimonioModel
     {
         [Column("Nome")]
         [Display(Name = "Nome")]
@@ -23,6 +23,6 @@ namespace GerenciarPatrimonios.Models.Patrimonio
 
         [Column("NumeroTombo")]
         [Display(Name = "Numero do tombo")]
-        public int NumeroTombo { get; set; }
+        public int NumeroTombo { get; }
     }
 }

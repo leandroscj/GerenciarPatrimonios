@@ -10,8 +10,8 @@ namespace GerenciarPatrimonios.Data
         {
         }
 
-        public DbSet<Models.Marca.Marca> Marca { get; set; }
-        public DbSet<Models.Patrimonio.Patrimonio> Patrimonio { get; set; }
-        public DbSet<Models.Usuario.Usuario> Usuario { get; set; }
+        public DbSet<Models.Marca.MarcaModel> Marca { get; set; }
+        public DbSet<Models.Patrimonio.PatrimonioModel> Patrimonio { get; set; }
+        public DbSet<Models.Usuario.UsuarioModel> Usuario { get; set; }
     }
 }

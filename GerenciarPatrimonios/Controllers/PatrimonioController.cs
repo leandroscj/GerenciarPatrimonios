@@ -11,7 +11,6 @@ namespace GerenciarPatrimonios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class PatrimonioController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -23,14 +22,16 @@ namespace GerenciarPatrimonios.Controllers
 
         // GET: api/Patrimonio
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Patrimonio>>> GetPatrimonio()
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<PatrimonioModel>>> GetPatrimonio()
         {
             return await _context.Patrimonio.ToListAsync();
         }
 
         // GET: api/Patrimonio/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Patrimonio>> GetPatrimonio(string id)
+        [Authorize]
+        public async Task<ActionResult<PatrimonioModel>> GetPatrimonio(string id)
         {
             var patrimonio = await _context.Patrimonio.FindAsync(id);
 
@@ -46,7 +47,7 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatrimonio(string id, Patrimonio patrimonio)
+        public async Task<IActionResult> PutPatrimonio(string id, PatrimonioModel patrimonio)
         {
             if (id != patrimonio.MarcaId)
             {
@@ -78,7 +79,7 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Patrimonio>> PostPatrimonio(Patrimonio patrimonio)
+        public async Task<ActionResult<PatrimonioModel>> PostPatrimonio(PatrimonioModel patrimonio)
         {
             _context.Patrimonio.Add(patrimonio);
             try
@@ -102,7 +103,8 @@ namespace GerenciarPatrimonios.Controllers
 
         // DELETE: api/Patrimonio/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Patrimonio>> DeletePatrimonio(string id)
+        [Authorize]
+        public async Task<ActionResult<PatrimonioModel>> DeletePatrimonio(string id)
         {
             var patrimonio = await _context.Patrimonio.FindAsync(id);
             if (patrimonio == null)

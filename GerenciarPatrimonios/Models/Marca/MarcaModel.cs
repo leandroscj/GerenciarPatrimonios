@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciarPatrimonios.Models.Marca
 {
-    [Table(nameof(Marca))]
-    public class Marca
+    [Table(nameof(MarcaModel))]
+    public class MarcaModel
     {
         [Column("Nome")]
         [Display(Name = "Nome")]

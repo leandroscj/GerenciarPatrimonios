@@ -11,7 +11,6 @@ namespace GerenciarPatrimonios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class MarcaController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -23,14 +22,16 @@ namespace GerenciarPatrimonios.Controllers
 
         // GET: api/Marca
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Marca>>> GetMarca()
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<MarcaModel>>> GetMarca()
         {
             return await _context.Marca.ToListAsync();
         }
 
         // GET: api/Marca/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Marca>> GetMarca(string id)
+        [Authorize]
+        public async Task<ActionResult<MarcaModel>> GetMarca(string id)
         {
             var marca = await _context.Marca.FindAsync(id);
 
@@ -46,7 +47,8 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMarca(string id, Marca marca)
+        [Authorize]
+        public async Task<IActionResult> PutMarca(string id, MarcaModel marca)
         {
             if (id != marca.MarcaId)
             {
@@ -78,7 +80,7 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Marca>> PostMarca(Marca marca)
+        public async Task<ActionResult<MarcaModel>> PostMarca(MarcaModel marca)
         {
             _context.Marca.Add(marca);
             try
@@ -102,7 +104,8 @@ namespace GerenciarPatrimonios.Controllers
 
         // DELETE: api/Marca/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Marca>> DeleteMarca(string id)
+        [Authorize]
+        public async Task<ActionResult<MarcaModel>> DeleteMarca(string id)
         {
             var marca = await _context.Marca.FindAsync(id);
             if (marca == null)

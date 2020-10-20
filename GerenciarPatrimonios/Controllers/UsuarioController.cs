@@ -11,7 +11,6 @@ namespace GerenciarPatrimonios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class UsuarioController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -23,14 +22,16 @@ namespace GerenciarPatrimonios.Controllers
 
         // GET: api/Usuarios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuario()
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<UsuarioModel>>> GetUsuario()
         {
             return await _context.Usuario.ToListAsync();
         }
 
         // GET: api/Usuarios/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Usuario>> GetUsuario(string id)
+        [Authorize]
+        public async Task<ActionResult<UsuarioModel>> GetUsuario(string id)
         {
             var usuario = await _context.Usuario.FindAsync(id);
 
@@ -46,7 +47,8 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(string id, Usuario usuario)
+        [Authorize]
+        public async Task<IActionResult> PutUsuario(string id, UsuarioModel usuario)
         {
             if (id != usuario.Email)
             {
@@ -78,7 +80,7 @@ namespace GerenciarPatrimonios.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<UsuarioModel>> PostUsuario(UsuarioModel usuario)
         {
             _context.Usuario.Add(usuario);
             try
@@ -102,7 +104,8 @@ namespace GerenciarPatrimonios.Controllers
 
         // DELETE: api/Usuarios/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Usuario>> DeleteUsuario(string id)
+        [Authorize]
+        public async Task<ActionResult<UsuarioModel>> DeleteUsuario(string id)
         {
             var usuario = await _context.Usuario.FindAsync(id);
             if (usuario == null)
