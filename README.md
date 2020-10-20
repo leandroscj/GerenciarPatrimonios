@@ -11,7 +11,7 @@
 ## Descrição do projeto 
 
 <p align="justify">
-  O projeto "Gerenciamento de Patrimônios" foi desenvolvido para auxiliar no gerenciamento dos patrimônios da sua empresa. Sendo assim, permitindo que usuários autenticados possam criar, atualizar ou remover os dados que ficam armazenados em banco de dados.
+  O projeto "Gerenciar Patrimônios" foi desenvolvido para auxiliar no gerenciamento dos patrimônios da sua empresa. Sendo assim, permitindo que usuários autenticados possam criar, atualizar ou remover os dados que ficam armazenados em banco de dados.
 </p>
 
 ## Funcionalidades
@@ -32,8 +32,6 @@
 - [Docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 - [Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
 
-...
-
 ## Como rodar a aplicação
 
 No terminal, clone o projeto: 
@@ -43,7 +41,7 @@ git clone https://github.com/leandroscj/GerenciarPatrimonios.git
 ```
 
 Para iniciar o SQL Server vamos rodar um comando docker. Abra o cmd e cole esse comando:
-**Esse comando faz com que uma imagem do SQL no docker seja configurada, permitindo nosso uso da base de dados.**
+- **Esse comando faz com que uma imagem do SQL no docker seja configurada, permitindo nosso uso da base de dados.**
 
 ```
 docker run --name SQL -e ACCEPT_EULA=Y -e SA_PASSWORD=COLOQUE_AQUI_SUA_SENHA -e MSSQL_PID=Express -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
@@ -58,10 +56,12 @@ No projeto, ajuste o arquivo "appSettings.json" com seu login, senha e nome da b
 
 Faça um build do projeto e veja se está faltando alguma referência, se sim, adicione e execute o projeto.
 
+
+
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/Capturar.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/teladotoken.PNG" width=40000>
 
-Para utilizar a API, você precisa de um Token que é gerado através da criação de uma conta no endpoint "Nova Conta" com seu email e uma senha, e será retornado para você esse Token de acesso para que consiga consultar, editar e remover registros feitos.
+> Para utilizar a API, você precisa de um Token que é gerado através da criação de uma conta no endpoint "Nova Conta" com seu email e uma senha, e será retornado para você esse Token de acesso para que consiga consultar, editar e remover registros feitos.
 
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/endpointsgeral.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/geral2.PNG" width=40000>
