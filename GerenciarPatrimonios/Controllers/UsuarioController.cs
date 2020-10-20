@@ -20,18 +20,25 @@ namespace GerenciarPatrimonios.Controllers
             _context = context;
         }
 
-        // GET: api/Usuarios
+        /// <summary>
+        /// Retorna a lista completa.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<UsuarioModel>>> GetUsuario()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuario()
         {
             return await _context.Usuario.ToListAsync();
         }
 
-        // GET: api/Usuarios/5
+        /// <summary>
+        /// Retorna o usuário conforme o ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize]
-        public async Task<ActionResult<UsuarioModel>> GetUsuario(string id)
+        public async Task<ActionResult<Usuario>> GetUsuario(string id)
         {
             var usuario = await _context.Usuario.FindAsync(id);
 
@@ -43,12 +50,15 @@ namespace GerenciarPatrimonios.Controllers
             return usuario;
         }
 
-        // PUT: api/Usuarios/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Atualiza os dados do usuário.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> PutUsuario(string id, UsuarioModel usuario)
+        public async Task<IActionResult> PutUsuario(string id, Usuario usuario)
         {
             if (id != usuario.Email)
             {
@@ -76,11 +86,13 @@ namespace GerenciarPatrimonios.Controllers
             return NoContent();
         }
 
-        // POST: api/Usuarios
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Registra um novo usuário.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<UsuarioModel>> PostUsuario(UsuarioModel usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
             _context.Usuario.Add(usuario);
             try
@@ -102,10 +114,14 @@ namespace GerenciarPatrimonios.Controllers
             return CreatedAtAction("GetUsuario", new { id = usuario.Email }, usuario);
         }
 
-        // DELETE: api/Usuarios/5
+        /// <summary>
+        /// Remove um usuário.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<UsuarioModel>> DeleteUsuario(string id)
+        public async Task<ActionResult<Usuario>> DeleteUsuario(string id)
         {
             var usuario = await _context.Usuario.FindAsync(id);
             if (usuario == null)

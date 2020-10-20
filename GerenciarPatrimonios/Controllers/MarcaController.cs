@@ -20,18 +20,25 @@ namespace GerenciarPatrimonios.Controllers
             _context = context;
         }
 
-        // GET: api/Marca
+        /// <summary>
+        /// Retorna a lista completa.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<MarcaModel>>> GetMarca()
+        public async Task<ActionResult<IEnumerable<Marca>>> GetMarca()
         {
             return await _context.Marca.ToListAsync();
         }
 
-        // GET: api/Marca/5
+        /// <summary>
+        /// Retorna a marca conforme o ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
-        [Authorize]
-        public async Task<ActionResult<MarcaModel>> GetMarca(string id)
+        [Authorize()]
+        public async Task<ActionResult<Marca>> GetMarca(string id)
         {
             var marca = await _context.Marca.FindAsync(id);
 
@@ -43,12 +50,15 @@ namespace GerenciarPatrimonios.Controllers
             return marca;
         }
 
-        // PUT: api/Marca/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Registra uma nova marca.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marca"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> PutMarca(string id, MarcaModel marca)
+        public async Task<IActionResult> PutMarca(string id, Marca marca)
         {
             if (id != marca.MarcaId)
             {
@@ -76,11 +86,13 @@ namespace GerenciarPatrimonios.Controllers
             return NoContent();
         }
 
-        // POST: api/Marca
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Registra uma nova marca.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<MarcaModel>> PostMarca(MarcaModel marca)
+        public async Task<ActionResult<Marca>> PostMarca(Marca marca)
         {
             _context.Marca.Add(marca);
             try
@@ -102,10 +114,14 @@ namespace GerenciarPatrimonios.Controllers
             return CreatedAtAction("GetMarca", new { id = marca.MarcaId }, marca);
         }
 
-        // DELETE: api/Marca/5
+        /// <summary>
+        /// Remove uma marca.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<MarcaModel>> DeleteMarca(string id)
+        public async Task<ActionResult<Marca>> DeleteMarca(string id)
         {
             var marca = await _context.Marca.FindAsync(id);
             if (marca == null)
