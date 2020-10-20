@@ -54,9 +54,15 @@ docker ps -a
 
 No projeto, ajuste o arquivo "appSettings.json" com seu login, senha e nome da base de dados do seu banco SSMS.
 
-Faça um build do projeto e veja se está faltando alguma referência, se sim, adicione e execute o projeto.
 
 
+Em seguida abra o Package Manager console e rode o comando:
+> Add-Migration InitialCreate
+
+Depois para criar sua base de dados execute:
+> Update-Database
+
+### Faça um build do projeto e veja se está faltando alguma referência, se sim, adicione e execute o projeto.
 
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/Capturar.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/teladotoken.PNG" width=40000>
