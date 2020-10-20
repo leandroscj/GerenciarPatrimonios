@@ -66,6 +66,11 @@ Faça um build do projeto e veja se está faltando alguma referência, se sim, a
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/endpointsgeral.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/geral2.PNG" width=40000>
 
+> Aqui também coloquei um exemplo de chamada via Postman.
+
+<img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/Token.PNG" width=40000>
+<img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/Login.PNG" width=40000>
+
 ... 
 
 
