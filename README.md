@@ -61,7 +61,7 @@ Faça um build do projeto e veja se está faltando alguma referência, se sim, a
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/Capturar.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/teladotoken.PNG" width=40000>
 
-> Para utilizar a API, você precisa de um Token que é gerado através da criação de uma conta no endpoint "Nova Conta" com seu email e uma senha, e será retornado para você esse Token de acesso para que consiga consultar, editar e remover registros feitos.
+> Para utilizar a API, você precisa de um Token que é gerado através da criação de uma conta no endpoint "Nova Conta" com seu email e uma senha, e será retornado um Token de acesso para você utilizar os endpoins, seja para consultar, editar e remover registros feitos.
 
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/endpointsgeral.PNG" width=40000>
 <img src="https://github.com/leandroscj/GerenciarPatrimonios/blob/Integration/imagens/geral2.PNG" width=40000>
