@@ -1,127 +1,127 @@
 <?xml version="1.0"?>
 <doc>
-    <assembly>
-        <name>GerenciarPatrimonios</name>
-    </assembly>
-    <members>
-        <member name="M:GerenciarPatrimonios.Controllers.MarcaController.GetMarca">
-            <summary>
-            Retorna a lista completa.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.MarcaController.GetMarca(System.String)">
-            <summary>
-            Retorna a marca conforme o ID.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.MarcaController.PutMarca(System.String,GerenciarPatrimonios.Models.Marca.Marca)">
-            <summary>
-            Registra uma nova marca.
-            </summary>
-            <param name="id"></param>
-            <param name="marca"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.MarcaController.PostMarca(GerenciarPatrimonios.Models.Marca.Marca)">
-            <summary>
-            Registra uma nova marca.
-            </summary>
-            <param name="marca"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.MarcaController.DeleteMarca(System.String)">
-            <summary>
-            Remove uma marca.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.GetPatrimonio">
-            <summary>
-            Retorna a lista completa.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.GetPatrimonio(System.String)">
-            <summary>
-            Retorna o patrimonio conforme o ID.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.PutPatrimonio(System.String,GerenciarPatrimonios.Models.Patrimonio.Patrimonio)">
-            <summary>
-             Atualiza os patrimonios.
-            </summary>
-            <param name="id"></param>
-            <param name="patrimonio"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.PostPatrimonio(GerenciarPatrimonios.Models.Patrimonio.Patrimonio)">
-            <summary>
-            Registra um novo Patrimonio.
-            </summary>
-            <param name="patrimonio"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.DeletePatrimonio(System.String)">
-            <summary>
-            Remove um patrimonio.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.TokenConfig.AuthController.RegistrarAsync(GerenciarPatrimonios.Models.TokenConfig.IdentityUser.RegisterUser)">
-            <summary>
-            Cria nova conta e gera um token de acesso.
-            </summary>
-            <param name="registerUser"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.TokenConfig.AuthController.LoginAsync(GerenciarPatrimonios.Models.TokenConfig.IdentityUser.LoginUser)">
-            <summary>
-            Faz o login em uma conta existente e gera um token de acesso.
-            </summary>
-            <param name="loginUser"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.UsuarioController.GetUsuario">
-            <summary>
-            Retorna a lista completa.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.UsuarioController.GetUsuario(System.String)">
-            <summary>
-            Retorna o usuário conforme o ID.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.UsuarioController.PutUsuario(System.String,GerenciarPatrimonios.Models.Usuario.Usuario)">
-            <summary>
-            Atualiza os dados do usuário.
-            </summary>
-            <param name="id"></param>
-            <param name="usuario"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.UsuarioController.PostUsuario(GerenciarPatrimonios.Models.Usuario.Usuario)">
-            <summary>
-            Registra um novo usuário.
-            </summary>
-            <param name="usuario"></param>
-            <returns></returns>
-        </member>
-        <member name="M:GerenciarPatrimonios.Controllers.UsuarioController.DeleteUsuario(System.String)">
-            <summary>
-            Remove um usuário.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-    </members>
+	<assembly>
+		<name>GerenciarPatrimonios</name>
+	</assembly>
+	<members>
+		<member name="M:GerenciarPatrimonios.Controllers.TokenConfig.AuthController.RegistrarAsync(GerenciarPatrimonios.Models.TokenConfig.IdentityUser.RegisterUser)">
+			<summary>
+				Cria nova conta e gera um token de acesso.
+			</summary>
+			<param name="registerUser"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.TokenConfig.AuthController.LoginAsync(GerenciarPatrimonios.Models.TokenConfig.IdentityUser.LoginUser)">
+			<summary>
+				Faz o login em uma conta existente e gera um token de acesso.
+			</summary>
+			<param name="loginUser"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.MarcaController.GetMarca">
+			<summary>
+				Retorna a lista completa.
+			</summary>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.MarcaController.GetMarca(System.String)">
+			<summary>
+				Retorna a marca conforme o ID.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.MarcaController.PutMarca(System.String,GerenciarPatrimonios.Models.Marca.Marca)">
+			<summary>
+				Registra uma nova marca.
+			</summary>
+			<param name="id"></param>
+			<param name="marca"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.MarcaController.PostMarca(GerenciarPatrimonios.Models.Marca.Marca)">
+			<summary>
+				Registra uma nova marca.
+			</summary>
+			<param name="marca"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.MarcaController.DeleteMarca(System.String)">
+			<summary>
+				Remove uma marca.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.GetPatrimonio">
+			<summary>
+				Retorna a lista completa.
+			</summary>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.GetPatrimonio(System.String)">
+			<summary>
+				Retorna o patrimonio conforme o ID.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.PutPatrimonio(System.String,GerenciarPatrimonios.Models.Patrimonio.Patrimonio)">
+			<summary>
+				Atualiza os patrimonios.
+			</summary>
+			<param name="id"></param>
+			<param name="patrimonio"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.PostPatrimonio(GerenciarPatrimonios.Models.Patrimonio.Patrimonio)">
+			<summary>
+				Registra um novo Patrimonio.
+			</summary>
+			<param name="patrimonio"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.PatrimonioController.DeletePatrimonio(System.String)">
+			<summary>
+				Remove um patrimonio.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.UsuarioController.GetUsuario">
+			<summary>
+				Retorna a lista completa.
+			</summary>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.UsuarioController.GetUsuario(System.String)">
+			<summary>
+				Retorna o usuário conforme o ID.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.UsuarioController.PutUsuario(System.String,GerenciarPatrimonios.Models.Usuario.Usuario)">
+			<summary>
+				Atualiza os dados do usuário.
+			</summary>
+			<param name="id"></param>
+			<param name="usuario"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.UsuarioController.PostUsuario(GerenciarPatrimonios.Models.Usuario.Usuario)">
+			<summary>
+				Registra um novo usuário.
+			</summary>
+			<param name="usuario"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GerenciarPatrimonios.Controllers.UsuarioController.DeleteUsuario(System.String)">
+			<summary>
+				Remove um usuário.
+			</summary>
+			<param name="id"></param>
+			<returns></returns>
+		</member>
+	</members>
 </doc>

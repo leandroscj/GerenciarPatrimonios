@@ -50,9 +50,9 @@ namespace GerenciarPatrimonios.Migrations
                         .HasColumnName("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumeroTombo")
+                    b.Property<Guid>("NumeroTombo")
                         .HasColumnName("NumeroTombo")
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("MarcaId");
 
