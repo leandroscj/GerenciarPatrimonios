@@ -31,7 +31,6 @@ namespace GerenciarPatrimonios
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers();
 
             services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
@@ -61,8 +60,6 @@ namespace GerenciarPatrimonios
             });
             services.AddSwaggerGen(c =>
             {
-                ;
-
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gerenciamento de Patrimonio", Version = "v1", });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -78,6 +75,8 @@ namespace GerenciarPatrimonios
                     Type = "apiKey"
                 });
             });
+
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -20,18 +20,25 @@ namespace GerenciarPatrimonios.Controllers
             _context = context;
         }
 
-        // GET: api/Patrimonio
+        /// <summary>
+        /// Retorna a lista completa.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<PatrimonioModel>>> GetPatrimonio()
+        public async Task<ActionResult<IEnumerable<Patrimonio>>> GetPatrimonio()
         {
             return await _context.Patrimonio.ToListAsync();
         }
 
-        // GET: api/Patrimonio/5
+        /// <summary>
+        /// Retorna o patrimonio conforme o ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize]
-        public async Task<ActionResult<PatrimonioModel>> GetPatrimonio(string id)
+        public async Task<ActionResult<Patrimonio>> GetPatrimonio(string id)
         {
             var patrimonio = await _context.Patrimonio.FindAsync(id);
 
@@ -43,11 +50,14 @@ namespace GerenciarPatrimonios.Controllers
             return patrimonio;
         }
 
-        // PUT: api/Patrimonio/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        ///  Atualiza os patrimonios.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="patrimonio"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatrimonio(string id, PatrimonioModel patrimonio)
+        public async Task<IActionResult> PutPatrimonio(string id, Patrimonio patrimonio)
         {
             if (id != patrimonio.MarcaId)
             {
@@ -75,11 +85,13 @@ namespace GerenciarPatrimonios.Controllers
             return NoContent();
         }
 
-        // POST: api/Patrimonio
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Registra um novo Patrimonio.
+        /// </summary>
+        /// <param name="patrimonio"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<PatrimonioModel>> PostPatrimonio(PatrimonioModel patrimonio)
+        public async Task<ActionResult<Patrimonio>> PostPatrimonio(Patrimonio patrimonio)
         {
             _context.Patrimonio.Add(patrimonio);
             try
@@ -101,10 +113,14 @@ namespace GerenciarPatrimonios.Controllers
             return CreatedAtAction("GetPatrimonio", new { id = patrimonio.MarcaId }, patrimonio);
         }
 
-        // DELETE: api/Patrimonio/5
+        /// <summary>
+        /// Remove um patrimonio.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Authorize]
-        public async Task<ActionResult<PatrimonioModel>> DeletePatrimonio(string id)
+        public async Task<ActionResult<Patrimonio>> DeletePatrimonio(string id)
         {
             var patrimonio = await _context.Patrimonio.FindAsync(id);
             if (patrimonio == null)

@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciarPatrimonios.Models.Patrimonio
 {
-    [Table(nameof(PatrimonioModel))]
-    public class PatrimonioModel
+    [Table(nameof(Patrimonio))]
+    public class Patrimonio
     {
         [Column("Nome")]
         [Display(Name = "Nome")]
@@ -25,12 +25,5 @@ namespace GerenciarPatrimonios.Models.Patrimonio
         [Column("NumeroTombo")]
         [Display(Name = "Numero do tombo")]
         public int NumeroTombo { get; private set; }
-
-        Random numeroAleatorio = new Random();
-
-        private int NumeroAleatorio()
-        {
-            return NumeroTombo = numeroAleatorio.Next(1, 20000000);
-        }
     }
 }

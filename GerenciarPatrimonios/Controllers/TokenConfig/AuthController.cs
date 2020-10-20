@@ -26,10 +26,14 @@ namespace GerenciarPatrimonios.Controllers.TokenConfig
             _appSettings = appSettings;
         }
 
+        /// <summary>
+        /// Cria nova conta e gera um token de acesso.
+        /// </summary>
+        /// <param name="registerUser"></param>
+        /// <returns></returns>
         [HttpPost("novaconta")]
         public async Task<ActionResult> RegistrarAsync(RegisterUser registerUser)
         {
-            //se for valido ele passa, se não for ele retorna um bad request com todos os erros que encontrou.
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
 
             var user = new IdentityUser
@@ -48,6 +52,11 @@ namespace GerenciarPatrimonios.Controllers.TokenConfig
             return Ok(await GerarJWTAsync(registerUser.Email));
         }
 
+        /// <summary>
+        /// Faz o login em uma conta existente e gera um token de acesso.
+        /// </summary>
+        /// <param name="loginUser"></param>
+        /// <returns></returns>
         [HttpPost("entrar")]
         public async Task<ActionResult> LoginAsync(LoginUser loginUser)
         {
@@ -73,7 +82,6 @@ namespace GerenciarPatrimonios.Controllers.TokenConfig
             {
                 Issuer = _appSettings.Value.Emissor,
                 Audience = _appSettings.Value.ValidoEm,
-                //formato utc pra nao ter erro de onde a pessoa q executou está rs.
                 Expires = DateTime.UtcNow.AddHours(_appSettings.Value.ExpiracaoHoras),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
